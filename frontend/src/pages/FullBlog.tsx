@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFullBlog } from "../hooks";
-import { FullBlog as FullBlogComponent } from "../components/FullBlog";
+import { FullBlog as FullBlogComponent } from "../components/Fullblog";
 import { FullBlogSkeleton } from "../components/FullBlogSkeleton";
 
 export const FullBlog = () => {

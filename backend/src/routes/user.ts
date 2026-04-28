@@ -11,7 +11,7 @@ export const userRouter = new Hono<{
         JWT_SECRET: string
     },
     Variables: {
-        prisma: PrismaClient;
+        prisma: any;
         userId: string;
     }
 
@@ -39,7 +39,8 @@ userRouter.post('/signup', async (c) => {
         const user = await prisma.user.create({
             data: {
                 email: body.email,
-                password: body.password
+                password: body.password,
+                name: body.name
             }
         });
         const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
